@@ -13,7 +13,55 @@ extern "C" {
  * Signature: ()V
  */
 JNIEXPORT void JNICALL Java_jemalloctest_JemallocIntegration_sayHello
-  (JNIEnv *, jobject);
+  (JNIEnv *, jclass);
+
+/*
+ * Class:     jemalloctest_JemallocIntegration
+ * Method:    setup
+ * Signature: (J)J
+ */
+JNIEXPORT jlong JNICALL Java_jemalloctest_JemallocIntegration_setup
+  (JNIEnv *, jclass, jlong);
+
+/*
+ * Class:     jemalloctest_JemallocIntegration
+ * Method:    mkConfig
+ * Signature: ()J
+ */
+JNIEXPORT jlong JNICALL Java_jemalloctest_JemallocIntegration_mkConfig
+  (JNIEnv *, jclass);
+
+/*
+ * Class:     jemalloctest_JemallocIntegration
+ * Method:    tearDown
+ * Signature: ()V
+ */
+JNIEXPORT void JNICALL Java_jemalloctest_JemallocIntegration_tearDown
+  (JNIEnv *, jclass);
+
+/*
+ * Class:     jemalloctest_JemallocIntegration
+ * Method:    setSleep
+ * Signature: (JJ)V
+ */
+JNIEXPORT void JNICALL Java_jemalloctest_JemallocIntegration_setSleep
+  (JNIEnv *, jclass, jlong, jlong);
+
+/*
+ * Class:     jemalloctest_JemallocIntegration
+ * Method:    alloc
+ * Signature: (J)J
+ */
+JNIEXPORT jlong JNICALL Java_jemalloctest_JemallocIntegration_alloc
+  (JNIEnv *, jclass, jlong);
+
+/*
+ * Class:     jemalloctest_JemallocIntegration
+ * Method:    free
+ * Signature: (J)V
+ */
+JNIEXPORT void JNICALL Java_jemalloctest_JemallocIntegration_free
+  (JNIEnv *, jclass, jlong);
 
 #ifdef __cplusplus
 }
